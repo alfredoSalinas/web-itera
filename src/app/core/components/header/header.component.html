@@ -1,0 +1,16 @@
+<header>
+  <a routerLink="" class="logo">
+      logo
+  </a>
+  <div class="menu">
+      <a routerLink="admin">Admin Itera</a>
+  </div>
+  <div class="perfil">
+      <button class="btn-secondary" (click)="login()" *ngIf="!isLogged">Login</button>
+      <div *ngIf="user$|async">
+          <img referrerpolicy="no-referrer" src="{{foto}}" alt="perfil" (click)="logout()">
+      </div>
+  </div>
+  
+</header>
+

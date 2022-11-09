@@ -1,0 +1,79 @@
+<h1 mat-dialog-title>Estudiante</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formStudent" (submit)="createStudent()">
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Carnet</mat-label>
+                <input matInput placeholder="Carnet" formControlName="carnet" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" formControlName="nombre" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Apellidos</mat-label>
+                <input matInput placeholder="Apellidos" formControlName="apellidos" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Colegio</mat-label>
+                <input matInput placeholder="Colegio" formControlName="colegio" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Curso</mat-label>
+                <input matInput placeholder="Curso" formControlName="curso" >
+            </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+              <mat-label>Celular</mat-label>
+              <input matInput placeholder="Celular" formControlName="celular" >
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+              <mat-label>Apoderado</mat-label>
+              <input matInput placeholder="Apoderado" formControlName="apoderado" >
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+              <mat-label>Celular Apoderado</mat-label>
+              <input matInput placeholder="Celular Apoderado" formControlName="celularApoderado" >
+          </mat-form-field>
+        </p>
+        <div class="modal-btn">
+            <button mat-button mat-dialog-close>Cancelar</button>
+            <button 
+                type="submit" 
+                mat-button 
+                mat-dialog-close 
+                [disabled]="formStudent.invalid"
+                *ngIf="!editForm" 
+            >
+                Guardar
+            </button>
+            <button 
+                type="submit" 
+                mat-button 
+                mat-dialog-close 
+                [disabled]="formStudent.invalid" 
+                *ngIf="editForm"
+            >
+                Editar
+            </button>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    
+    
+</div>
+

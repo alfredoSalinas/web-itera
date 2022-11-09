@@ -1,0 +1,79 @@
+
+@import '../../styles/colors.scss';
+
+header{
+    width: 100%;
+    height: 80px;
+    padding: 0px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $colorNegro;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container{
+    width: 100%;
+    height: 106px;
+    padding: 0px 80px;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 30%;
+    flex: 1 1 30%;
+}
+
+.menu{
+    width: 70%;
+    padding: 0px 32px;
+    flex: 1 1 70%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px;
+}
+
+.menu a{
+    font-size: 1.2rem;
+    color: $colorBlanco;
+}
+
+.menu a:hover{
+    color: $colorPrimary;
+}
+
+.menu .active{
+    color: $colorPrimary;
+    text-decoration: underline;
+}
+
+.perfil{
+    flex: 2 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.perfil img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+@media screen and (max-width: 767px){
+
+    header{
+        height: 60px;
+        padding: 0px 16px;
+    }
+
+    .perfil img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu{
+        display: none;
+    }
+}

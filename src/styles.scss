@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import './app/core/styles/colors.scss';
+
+// @font-face {
+//     font-family: 'Hint';
+//     src: url('./assets/fonts/HindSiliguri-Regular.ttf') format('truetype');
+//     font-style: normal;
+//     font-weight: normal;
+// }
+
+// @font-face {
+//     font-family: 'Hint-bold';
+//     src: url('./assets/fonts/HindSiliguri-Bold.ttf') format('truetype');
+//     font-style: normal;
+//     font-weight: normal;
+// }
+
+// @font-face {
+//     font-family: 'Oxygen Bold';
+//     src: url('./assets/fonts/Oxygen-Bold.ttf') format('truetype');
+//     font-style: normal;
+//     font-weight: normal;
+// }
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Hint';
+    
+}
+html, body { height: 100%; }
+body { margin: 0; background-color: $colorBlanco;  }
