@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>Instructor</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formTeacher" (submit)="createStudent()">
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Carnet</mat-label>
+                <input matInput placeholder="Carnet" formControlName="carnet" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" formControlName="nombre" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Profesion</mat-label>
+                <input matInput placeholder="Profesion" formControlName="profesion" >
+            </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+              <mat-label>Materias</mat-label>
+              <input matInput placeholder="Materias" formControlName="materias" >
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+              <mat-label>Celular</mat-label>
+              <input matInput placeholder="Celular" formControlName="celular" >
+          </mat-form-field>
+        </p>
+        <div class="modal-btn">
+            <button mat-button mat-dialog-close>Cancelar</button>
+            <button 
+                type="submit" 
+                mat-button 
+                mat-dialog-close 
+                [disabled]="formTeacher.invalid"
+                *ngIf="!editForm" 
+            >
+                Guardar
+            </button>
+            <button 
+                type="submit" 
+                mat-button 
+                mat-dialog-close 
+                [disabled]="formTeacher.invalid" 
+                *ngIf="editForm"
+            >
+                Editar
+            </button>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    
+    
+</div>
+

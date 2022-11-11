@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Asignatura</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formMateria" (submit)="createItem()">
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Codigo</mat-label>
+                <input matInput placeholder="Codigo" formControlName="codigo" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" formControlName="nombre" >
+            </mat-form-field>
+        </p>
+        <div class="modal-btn">
+            <button mat-button mat-dialog-close>Cancelar</button>
+            <button 
+                type="submit" 
+                mat-button 
+                mat-dialog-close 
+                [disabled]="formMateria.invalid"
+                *ngIf="!editForm" 
+            >
+                Guardar
+            </button>
+            <button 
+                type="submit" 
+                mat-button 
+                mat-dialog-close 
+                [disabled]="formMateria.invalid" 
+                *ngIf="editForm"
+            >
+                Editar
+            </button>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    
+    
+</div>
+

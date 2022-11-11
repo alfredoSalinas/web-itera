@@ -1,0 +1,32 @@
+<div class="container-table" *ngIf="reserva">
+  <table >
+      <thead>
+          <tr >
+              <th class="sticky">
+                  <Button class="btn-action" (click)="onSustDia()">{{'<'}}</Button>
+              </th>
+              <th style="min-width: 100px;"  *ngFor="let f of bodySemana|async; let i=index" > 
+                  <p class="hoy" *ngIf="getFecha(f) == hoyDia"> Hoy </p>
+                  <p class="fechas">{{ dias[i] }} {{ getFecha(f)}}</p>
+              </th>
+              <th class="stickyR">
+                  <Button class="btn-action" (click)="onAddDia()" >{{'>'}}</Button>
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let h of horas">
+              <td class="sticky" >{{ h }}</td>
+              <td (click)="showModalReservation(h, f)" *ngFor="let f of bodySemana|async">
+                  <div class="reserve" *ngIf="comparar(h, f) as p">
+                    <p>{{ p.docente.nombre }}</p>
+                    <p *ngFor="let s of p.estudiantes" >
+                      {{ s.nombre }}
+                  </p>
+                  </div>
+              </td>
+              <td class="stickyR"></td>
+          </tr>
+      </tbody>
+  </table>
+</div>

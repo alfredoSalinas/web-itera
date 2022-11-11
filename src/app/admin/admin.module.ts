@@ -7,6 +7,12 @@ import { StudensComponent } from './pages/studens/studens.component';
 import { TableStudentsComponent } from './components/tables/table-students/table-students.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormStudentComponent } from './components/forms/form-student/form-student.component';
+import { TeachersComponent } from './pages/teachers/teachers.component';
+import { TableTeachersComponent } from './components/tables/table-teachers/table-teachers.component';
+import { MateriasComponent } from './pages/materias/materias.component';
+import { FormTeacherComponent } from './components/forms/form-teacher/form-teacher.component';
+import { TableMateriasComponent } from './components/tables/table-materias/table-materias.component';
+import { FormMateriaComponent } from './components/forms/form-materia/form-materia.component';
 
 
 @NgModule({
@@ -14,7 +20,13 @@ import { FormStudentComponent } from './components/forms/form-student/form-stude
     AdminComponent,
     StudensComponent,
     TableStudentsComponent,
-    FormStudentComponent
+    FormStudentComponent,
+    TeachersComponent,
+    TableTeachersComponent,
+    MateriasComponent,
+    FormTeacherComponent,
+    TableMateriasComponent,
+    FormMateriaComponent
   ],
   imports: [
     CommonModule,

@@ -1,18 +1,18 @@
 @import './app/core/styles/colors.scss';
 
-// @font-face {
-//     font-family: 'Hint';
-//     src: url('./assets/fonts/HindSiliguri-Regular.ttf') format('truetype');
-//     font-style: normal;
-//     font-weight: normal;
-// }
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
 
-// @font-face {
-//     font-family: 'Hint-bold';
-//     src: url('./assets/fonts/HindSiliguri-Bold.ttf') format('truetype');
-//     font-style: normal;
-//     font-weight: normal;
-// }
+@font-face {
+    font-family: 'Montserrat-regular';
+    src: url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
 
 // @font-face {
 //     font-family: 'Oxygen Bold';
@@ -25,9 +25,172 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Hint';
-    
+    text-decoration: none;    
 }
-html, body { height: 100%; }
+html, body { height: 100%; font-family: 'Montserrat'; }
 body { margin: 0; background-color: $colorBlanco;  }
+
+.form-container{
+
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+table{
+    width: 100%;
+    font-family: 'Montserrat-regular';
+    color: $colorSecondary;
+}
+
+.header-button{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-btn{
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-cancel{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding: 8px 16px;
+    color: gray;
+    background-color: inherit;
+    border: 1px solid lightgray;
+    border-radius: 50px;
+    opacity: 80%;
+    cursor: pointer;
+  }
+  
+  .btn-cancel:hover{
+    opacity: 100%;
+  }
+  
+
+.table-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.table-btn button{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.mat-icon{
+    color: $colorSecondary;
+}
+
+.table-container{
+    width: 100%;
+    padding: 0px 16px;
+}
+.search{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-form-field{
+    width: 100%;
+}
+
+.form-control{
+    padding: 8px 0px;
+    display: flex;
+    gap: 16px;
+}
+
+.btn-primary{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding: 8px 16px;
+    color: $colorBlanco;
+    background-color: $colorPrimary;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.btn-primary:disabled{
+    background-color: lightgray;
+}
+
+.btn-secondary{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding: 8px 16px;
+    color: $colorPrimary;
+    background-color: inherit;
+    border: 2px solid $colorPrimary;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.btn-action{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding: 4px;
+    color: $colorSecondary;
+    background-color: lightgrey;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-action:hover{
+    background-color: $colorPrimary;
+}
+
+@media screen and (max-width: 767px) {
+    body{
+        font-size: .8rem;
+    }
+
+    .table-container{
+        width: 100%;
+        padding: 0px;
+    }
+
+    .mat-header-cell{
+        font-size: .7rem;
+    }
+
+    .mat-cell{
+        font-size: .7rem;
+        color: $colorSecondary;
+    }
+
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        overflow: auto;
+    }
+    .form-control{
+        padding: 0px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+    .btn-primary{
+        font-size: .8rem;
+    }
+    .btn-secondary{
+        font-size: .8rem;
+    }
+}

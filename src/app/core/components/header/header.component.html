@@ -1,9 +1,7 @@
 <header>
-  <a routerLink="" class="logo">
-      logo
-  </a>
   <div class="menu">
-      <a routerLink="admin">Admin Itera</a>
+    <a routerLink="inscripciones" routerLinkActive="active">Inscripciones</a>
+    <a routerLink="admin" routerLinkActive="active">Admin Itera</a>
   </div>
   <div class="perfil">
       <button class="btn-secondary" (click)="login()" *ngIf="!isLogged">Login</button>

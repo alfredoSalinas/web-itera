@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { shareReplay } from 'rxjs';
 import { StudentModelId } from '../core/models/student.model';
 
 @Injectable({
@@ -17,7 +18,7 @@ export class StudentService {
   constructor(
     private db: AngularFirestore,
     private formBuilder: FormBuilder
-  ) { }
+  ) { this.formInit() }
 
   formInit(){
     this.formStudent = this.formBuilder.group({
@@ -38,7 +39,9 @@ export class StudentService {
 
 
   getAll(){
-    return this.studentRef.snapshotChanges()
+    return this.studentRef.snapshotChanges().pipe(
+      shareReplay()
+    )
   }
 
 }

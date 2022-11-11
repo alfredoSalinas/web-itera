@@ -1,0 +1,124 @@
+
+@import '../../core/styles/colors.scss';
+
+.admin-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 80px;
+    left: 0px;
+}
+
+.admin-menu{
+    width: 20%;
+    height: 100%;
+    padding: 0px 40px;
+    background-image: url('../../../assets/images/MENU\ ADMIN.png');
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-logo{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.admin-menu a{
+    padding: 8px;
+    color: white;
+    font-size: 24px;
+    border-bottom: 1px solid white;
+}
+
+.admin-logo a{
+    border: none;
+}
+
+.admin-menu a:hover{
+    color: $colorPrimary;
+}
+
+.admin-menu .active{
+    color: $colorPrimary;
+}
+
+.admin-content{
+    width: 80%;
+    height: 100%;
+    overflow: scroll;
+}
+
+.admin-menu-mobil{
+    display: none;
+}
+
+.admin-menu-mobil a{
+    padding: 8px;
+    color: $colorBlanco;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-menu-mobil a .mat-icon{
+    color: $colorBlanco;
+}
+
+.active p{
+    color: $colorPrimary;
+    text-decoration: none;
+    text-shadow: 0.5px 0.5px 4px rgba(253, 253, 253, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-menu-mobil a p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .admin-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: fixed;
+        top: 60px;
+        left: 0px;
+    }
+    .admin-menu{
+        display: none;
+    }
+    .admin-content{
+        width: 100%;
+        height: calc(100% - 110px);
+        overflow: scroll;
+    }
+    .admin-menu-mobil{
+        display: block;
+        width: 100%;
+        height: 60px;
+        background-color: $colorSecondary;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: space-around;
+    }
+}

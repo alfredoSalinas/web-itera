@@ -8,7 +8,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: $colorNegro;
+    background: linear-gradient(270deg, #1B304C 0%, #22465C 34.37%, #48BAAF 66.67%, #67C6BD 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -21,8 +21,12 @@ header{
 }
 
 .logo{
-    width: 30%;
-    flex: 1 1 30%;
+    width: 25%;
+    flex: 1 1 25%;
+}
+
+.logo img{
+  width: 100px;
 }
 
 .menu{
@@ -77,3 +81,4 @@ header{
         display: none;
     }
 }
+

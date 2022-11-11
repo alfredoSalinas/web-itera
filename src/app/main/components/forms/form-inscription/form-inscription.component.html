@@ -1,0 +1,14 @@
+<p>{{ student.nombre }} {{ student.apellidos }}</p>
+
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Paquetes</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option *ngFor="let p of dataPackages" [value]="p.value">
+        {{p.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<button (click)="registerStudent()" mat-dialog-close >Inscribir</button>

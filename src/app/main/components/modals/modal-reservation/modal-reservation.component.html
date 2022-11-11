@@ -1,0 +1,13 @@
+
+<div *ngIf="reservationDate$|async as fecha" >
+  <p>{{ reservationDate$| async | date: 'short' }}</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Instructores</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option *ngFor="let p of _teacherSelect" [value]="p.value">
+        {{p.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button (click)="reservar(fecha)" mat-dialog-close >Reservar</button>
+</div>
