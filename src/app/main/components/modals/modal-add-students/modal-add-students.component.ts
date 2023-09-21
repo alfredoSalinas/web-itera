@@ -2,8 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { map, Observable, Subscription } from 'rxjs';
-import { InscribeModel } from 'src/app/core/models/inscribe.model';
+import { Observable, Subscription } from 'rxjs';
 import { ReservationModel, ReservationModelId } from 'src/app/core/models/reservation.model';
 import { StudentModel } from 'src/app/core/models/student.model';
 import { CalendarService } from 'src/app/services/calendar.service';
@@ -77,6 +76,29 @@ export class ModalAddStudentsComponent implements OnInit {
       
     })
 
+  }
+
+  deleteItem(item: StudentModel, reserve: ReservationModelId){
+    
+    const filterStudent: StudentModel[] = reserve.estudiantes.filter(d=>{
+      return d.carnet !== item.carnet
+    })
+    const data: ReservationModel = {
+      fecha: reserve.fecha,
+      docente: reserve.docente,
+      estudiantes: filterStudent
+    }
+    
+    this.reservationService.editReservation(reserve.id, data).then(()=>{
+      console.log('Bien');
+    })
+  }
+
+  deleteReseve(reserve: ReservationModelId){
+    this.reservationService.deleteItem(reserve.id).then(()=>{
+      console.log('eliminado');
+      
+    })
   }
 
 }

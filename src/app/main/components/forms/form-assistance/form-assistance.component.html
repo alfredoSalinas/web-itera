@@ -1,0 +1,23 @@
+<div *ngIf="student">
+  <p>{{ student.nombre }} {{ student.apellidos }}</p>
+</div>
+
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Materias</mat-label>
+    <mat-select [(value)]="selectedMateria">
+      <mat-option *ngFor="let p of dataMateria" [value]="p.value">
+        {{p.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Docentes</mat-label>
+    <mat-select [(value)]="selectedTeacher">
+      <mat-option *ngFor="let p of dataDocente" [value]="p.value">
+        {{p.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button (click)="discountClasses()" mat-dialog-close >Guardar</button>
+</div>

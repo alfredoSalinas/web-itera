@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MateriaModelId } from '../core/models/materia.model';
+import { MateriaModel, MateriaModelId } from '../core/models/materia.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +32,13 @@ export class MateriaService {
 
   getAll(){
     return this.materiasRef.snapshotChanges()
+  }
+
+  async addItem(data: MateriaModel){
+    return await this.materiasRef.doc().set(data)
+  }
+
+  async updateItem(id: string, data: MateriaModel){
+    return await this.materiasRef.doc(id).update(data)
   }
 }

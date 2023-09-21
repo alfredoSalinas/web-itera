@@ -1,0 +1,14 @@
+
+<div class="label-container">
+  <div>
+      <label class="label" for="desde">Desde : </label>
+      <input type="date" id="desde" (change)="setFecha($event)">
+  </div>
+  <div>
+      <label class="label" for="hasta">Hasta : </label>
+      <input type="date" id="hasta" (change)="setFecha1($event)">
+  </div>
+  <button class="btn-primary" (click)="getSalesByDate()" >Ver</button>
+</div>
+
+<app-table-history></app-table-history>

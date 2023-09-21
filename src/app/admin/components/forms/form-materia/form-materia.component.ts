@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MateriaModel } from 'src/app/core/models/materia.model';
 import { MateriaService } from 'src/app/services/materia.service';
 
 @Component({
@@ -25,23 +26,24 @@ export class FormMateriaComponent implements OnInit {
   }
 
   createItem(){
-    // if(this.standService.editForm){
-    //   this.standService.updateItem(this.standService.idStand, this.formStand.value)
-    //   .then(()=>{
-    //     console.log('Stand actulaizado');
-    //   })
-    // }else{
-    //   const data: StandModel = {
-    //     estado: 'Disponible',
-    //     ...this.formStand.value
-    //   }
-    //   this.standService.addItem(data).then(()=>{
-    //     console.log('Stand creado');
-    //   }).catch(e=>{
-    //     console.log(e)
-    //     this.snack.open('Hubo un error al guardar, intente otra vez', 'Aceptar')
-    //   })
-    // }
+    if(this.materiaService.editForm){
+      this.materiaService.updateItem(this.materiaService.idMateria, this.formMateria.value)
+      .then(()=>{
+        console.log('Materia actualizada');
+      })
+    }else{
+      const data: MateriaModel = {
+        estado: 'Disponible',
+        ...this.formMateria.value
+      }
+      this.materiaService.addItem(data).then(()=>{
+        console.log('Materia creado');
+      }).catch(e=>{
+        console.log(e)
+        this.snack.open('Hubo un error al guardar, intente otra vez', 'Aceptar')
+      })
+    }
+    this.materiaService.formInit()
   }
 
 }

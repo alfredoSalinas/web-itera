@@ -13,7 +13,14 @@ import { TableWeekBComponent } from './components/tables/table-week-b/table-week
 import { ReservationAComponent } from './pages/reservation-a/reservation-a.component';
 import { ModalReservationComponent } from './components/modals/modal-reservation/modal-reservation.component';
 import { ModalAddStudentsComponent } from './components/modals/modal-add-students/modal-add-students.component';
-
+import { PageStudentsComponent } from './pages/page-students/page-students.component';
+import { FormStudentComponent } from './components/forms/form-student/form-student.component';
+import { PageHistoryComponent } from './pages/page-history/page-history.component';
+import { TableHistoryComponent } from './components/tables/table-history/table-history.component';
+import { ModalAssistanceComponent } from './components/modals/modal-assistance/modal-assistance.component';
+import { FormAssistanceComponent } from './components/forms/form-assistance/form-assistance.component';
+import { NgxPrintElementModule } from 'ngx-print-element';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,15 +29,23 @@ import { ModalAddStudentsComponent } from './components/modals/modal-add-student
     TableStudentComponent,
     TableInscribeComponent,
     FormInscriptionComponent,
+    FormStudentComponent,
     TableWeekAComponent,
     TableWeekBComponent,
     ReservationAComponent,
     ModalReservationComponent,
-    ModalAddStudentsComponent
+    ModalAddStudentsComponent,
+    PageStudentsComponent,
+    PageHistoryComponent,
+    TableHistoryComponent,
+    ModalAssistanceComponent,
+    FormAssistanceComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MainRoutingModule,
+    NgxPrintElementModule,
     SharedModule
   ]
 })

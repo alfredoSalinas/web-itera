@@ -14,8 +14,8 @@
 
 table{
     width: 100%;
+    height: 100%;
     border-collapse: collapse;
-    font-family: 'Poppins';
     color: $colorSecondary;
     border: 1px solid lightgray;
 }
@@ -41,8 +41,9 @@ tbody tr:nth-child(2n){
 .reserve{
     padding: 8px;
     border-radius: 8px;
-    color: $colorBlanco;
+    color: $colorNegro;
     background-color: $colorPrimary;
+    overflow: scroll;
 }
 
 .sticky{
@@ -106,6 +107,11 @@ tbody tr:nth-child(2n) .sticky{
 .table-responsive {
     min-height: .01%;
     overflow: scroll;
+}
+
+.table-week-teacher{
+    color: $colorNegro;
+    border-bottom: 1px solid $colorNegro;
 }
 
 @media screen and (max-width: 767px) {

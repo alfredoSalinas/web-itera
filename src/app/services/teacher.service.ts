@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TeacherModelId } from '../core/models/teacher.model';
+import { TeacherModel, TeacherModelId } from '../core/models/teacher.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +23,11 @@ export class TeacherService {
     this.formTeacher = this.formBuilder.group({
       carnet: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
+      apellidos: ['', [Validators.required]],
       profesion: ['', [Validators.required]],
       materias: ['', [Validators.required]],
       celular: ['', [Validators.required]],
+      color: ['', [Validators.required]]
     })
   }
 
@@ -35,6 +37,18 @@ export class TeacherService {
 
   getAll(){
     return this.teacherRef.snapshotChanges()
+  }
+
+  async addItem(data: TeacherModel){
+    return await this.teacherRef.doc().set(data)
+  }
+
+  async updateItem(id: string, data: TeacherModel){
+    return await this.teacherRef.doc(id).update(data)
+  }
+
+  async deleteItem(id: string){
+    return await this.teacherRef.doc(id).delete()
   }
 
 }

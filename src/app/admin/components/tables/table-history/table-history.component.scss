@@ -1,0 +1,14 @@
+@import '../../../../core/styles/colors.scss';
+
+.sale-total-container{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  .sale-total{
+    padding: 4px 8px;
+    border: 2px solid $colorSecondary;
+    border-radius: 8px;
+  }
+}

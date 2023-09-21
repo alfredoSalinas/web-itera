@@ -18,8 +18,8 @@
           <tr *ngFor="let h of horas">
               <td class="sticky" >{{ h }}</td>
               <td (click)="showModalReservation(h, f)" *ngFor="let f of bodySemana|async">
-                  <div class="reserve" *ngIf="comparar(h, f) as p">
-                    <p>{{ p.docente.nombre }}</p>
+                  <div class="reserve" *ngIf="comparar(h, f) as p" [ngStyle]="{'background-color': p.docente.color}">
+                    <p class="table-week-teacher">{{ p.docente.apellidos }}</p>
                     <p *ngFor="let s of p.estudiantes" >
                       {{ s.nombre }}
                   </p>

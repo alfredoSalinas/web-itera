@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TeacherModel } from 'src/app/core/models/teacher.model';
 import { TeacherService } from 'src/app/services/teacher.service';
 
 @Component({
@@ -25,23 +26,24 @@ export class FormTeacherComponent implements OnInit {
   }
 
   createStudent(){
-    // if(this.standService.editForm){
-    //   this.standService.updateItem(this.standService.idStand, this.formStand.value)
-    //   .then(()=>{
-    //     console.log('Stand actulaizado');
-    //   })
-    // }else{
-    //   const data: StandModel = {
-    //     estado: 'Disponible',
-    //     ...this.formStand.value
-    //   }
-    //   this.standService.addItem(data).then(()=>{
-    //     console.log('Stand creado');
-    //   }).catch(e=>{
-    //     console.log(e)
-    //     this.snack.open('Hubo un error al guardar, intente otra vez', 'Aceptar')
-    //   })
-    // }
+    if(this.teacherService.editForm){
+      this.teacherService.updateItem(this.teacherService.idTeacher, this.formTeacher.value)
+      .then(()=>{
+        console.log('Instructor actualizado');
+      })
+    }else{
+      const data: TeacherModel = {
+        estado: 'Disponible',
+        ...this.formTeacher.value
+      }
+      this.teacherService.addItem(data).then(()=>{
+        console.log('Instructor creado');
+      }).catch(e=>{
+        console.log(e)
+        this.snack.open('Hubo un error al guardar, intente otra vez', 'Aceptar')
+      })
+    }
+    this.teacherService.formInit()
   }
 
 }

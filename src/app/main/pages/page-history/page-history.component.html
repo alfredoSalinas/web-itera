@@ -1,0 +1,11 @@
+
+<div class="history-container">
+  <div *ngIf="student$|async as student">
+    <p>{{ student.nombre }} {{ student.apellidos }}</p>
+    <p>Clases pendientes : {{ student.clases }}</p>
+    <p>Curso : {{ student.curso }}</p>
+    <p>Celular : {{ student.celular }}</p>
+  </div>
+  
+</div>
+<app-table-history></app-table-history>

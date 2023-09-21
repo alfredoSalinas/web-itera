@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>Paquete</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formPackage" (submit)="createItem()">
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Codigo</mat-label>
+                <input matInput placeholder="Codigo" formControlName="codigo" >
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" formControlName="nombre" >
+            </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+              <mat-label>Precio</mat-label>
+              <input type="number" matInput placeholder="Precio" formControlName="precio" >
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+              <mat-label>Clases</mat-label>
+              <input type="number" matInput placeholder="Clases" formControlName="clases" >
+          </mat-form-field>
+        </p>
+        <div class="modal-btn">
+            <button mat-button mat-dialog-close>Cancelar</button>
+            <button 
+                type="submit" 
+                mat-button 
+                mat-dialog-close 
+                [disabled]="formPackage.invalid"
+                *ngIf="!editForm" 
+            >
+                Guardar
+            </button>
+            <button 
+                type="submit" 
+                mat-button 
+                mat-dialog-close 
+                [disabled]="formPackage.invalid" 
+                *ngIf="editForm"
+            >
+                Editar
+            </button>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    
+    
+</div>
+

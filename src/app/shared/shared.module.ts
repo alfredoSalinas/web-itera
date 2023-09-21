@@ -14,6 +14,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from "@angular/material/tabs";
+import { ModalDeleteComponent } from './components/modals/modal-delete/modal-delete.component';
 
 
 @NgModule({
@@ -34,7 +35,9 @@ import { MatTabsModule } from "@angular/material/tabs";
     MatTabsModule,
     MatSnackBarModule
   ],
-  declarations: [],
+  declarations: [
+    ModalDeleteComponent
+  ],
   exports: [
     CommonModule,
     ReactiveFormsModule,
@@ -50,7 +53,8 @@ import { MatTabsModule } from "@angular/material/tabs";
     MatSelectModule,
     MatAutocompleteModule,
     MatTabsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ModalDeleteComponent,
   ],
   providers: []
 })

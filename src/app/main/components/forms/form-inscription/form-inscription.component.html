@@ -1,5 +1,5 @@
 <p>{{ student.nombre }} {{ student.apellidos }}</p>
-
+<br>
 <div>
   <mat-form-field appearance="fill">
     <mat-label>Paquetes</mat-label>
@@ -10,5 +10,29 @@
     </mat-select>
   </mat-form-field>
 </div>
-
+<div class="factura" id="factura">
+  <div class="factura-head">
+    <p>Itera Academy</p>
+    <p>Dir: Adela Zamudio 137</p>
+    <p>Cel: 76120970 </p>
+    <p>Sucre-Bolivia</p>
+  </div>
+  <hr>
+  <p>Fecha: {{ fechaFactura|date: 'short' }}</p>
+  <p>Nombre: {{ student.nombre }} {{ student.apellidos }}</p>
+  <p>Curso: {{ student.curso }}</p>
+  <p>Colegio: {{ student.colegio }}</p>
+  <hr>
+  <div *ngIf="selected">
+    <p>Paquete: {{ getPackage()[0].nombre }}</p>
+    <p>Clases: {{ getPackage()[0].clases }}</p>
+    <p>Precio: {{ getPackage()[0].precio }} Bs</p>
+    <hr>
+    <p>Total: {{ getPackage()[0].precio * getPackage()[0].clases }} Bs</p>
+  </div>
+  <hr>
+  <br><br><br>
+  <hr>
+</div>
+<button [print]="['factura']">Imprimir</button>
 <button (click)="registerStudent()" mat-dialog-close >Inscribir</button>

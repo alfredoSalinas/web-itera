@@ -7,6 +7,7 @@ export interface StudentModel {
   celular: string
   apoderado: string
   celApoderado: string
+  clases: number
 }
 
 export interface StudentModelId extends StudentModel {

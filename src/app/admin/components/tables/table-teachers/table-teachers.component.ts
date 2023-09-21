@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { TeacherModelId } from 'src/app/core/models/teacher.model';
 import { TeacherService } from 'src/app/services/teacher.service';
 import { FormTeacherComponent } from '../../forms/form-teacher/form-teacher.component';
+import { ModalDeleteComponent } from 'src/app/shared/components/modals/modal-delete/modal-delete.component';
 
 @Component({
   selector: 'app-table-teachers',
@@ -20,7 +21,7 @@ export class TableTeachersComponent implements OnInit {
 
   dataSource = new MatTableDataSource
 
-  displayedColumns: string[] = ['carnet', 'nombre', 'profesion', 'materias', 'celular', 'actions'];
+  displayedColumns: string[] = ['carnet', 'nombre', 'apellidos', 'profesion', 'materias', 'celular', 'color', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -69,6 +70,17 @@ export class TableTeachersComponent implements OnInit {
     this.dialog.open(FormTeacherComponent, {
       width: '400px'
     })
+  }
+
+  deleteTeacher(id: string){
+    const dialogRef = this.dialog.open(ModalDeleteComponent)
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.teacherService.deleteItem(id).then(()=>{
+          console.log('Elimininado')
+        })
+      }
+    });
   }
 
 }

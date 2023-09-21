@@ -1,0 +1,112 @@
+
+@import '../../../core/styles/colors.scss';
+
+.label-container{
+    width: 100%;
+    padding: 8px 0px;
+    font-family: 'hind';
+    font-size: .7rem;
+    display: flex;
+    align-content:center;
+    justify-content: flex-start;
+    .sales-date{
+        width: 80px;
+        height: 40px;
+        padding: 0px;
+    }
+    button{
+        font-family: 'Ubuntu';
+        background-color: $colorPrimary;
+        padding: 4px 8px;
+        border-radius: 8px;
+    }
+}
+
+.sales-container{
+    width: 100%;
+    mat-tab-group{
+        width: 100%;
+        
+        .sales-item{
+            width: 100%;
+        }
+    }
+    
+}
+
+
+.sales-item p{
+    color: $colorNegro;
+    font-family: 'Ubuntu';
+    text-align: center;
+}
+
+
+
+.label-container div input{
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.sales-container{
+    padding: 8px;
+    display: flex;
+    gap: 16px;
+}
+
+.sales-table-container{
+    text-align: center;
+    width: 50%;
+    flex: 1 1 50%;
+}
+
+.sales-title{
+    padding: 16px;
+    font-family: 'permanent';
+}
+
+.sales-table{
+    width: 100%;
+}
+
+.qr-table-container{
+    text-align: center;
+    width: 50%;
+    flex: 1 1 50%;
+}
+
+.qr-table{
+    width: 100%;
+}
+
+th{
+    font-family: 'permanent';
+    color: $colorPrimary;
+}
+
+.detalle-table{
+    width: 100%;
+}
+
+.qr-table tfoot td,
+.sales-table tfoot td{
+    border-top: 1px solid $colorPrimary;
+}
+
+.sales-total{
+    padding: 8px 16px;
+    font-family: 'hind';
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (min-width: 768px){
+    .label-container{
+        font-family: 'hind';
+        font-weight: bold;
+        display: flex;
+        align-content:flex-end;
+        gap: 16px;
+    }
+}

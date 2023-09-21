@@ -18,9 +18,11 @@ export class CalendarService {
     docente: {
       carnet: '',
       nombre: '',
+      apellidos: '',
       celular: '',
       profesion: '',
       materias: '',
+      color: '',
     }
   })
 

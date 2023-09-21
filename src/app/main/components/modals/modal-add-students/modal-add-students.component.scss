@@ -1,5 +1,29 @@
+@import '../../../../core/styles/colors.scss';
+
+.reserve-header{
+  padding: 16px;
+  background-color: lightgrey;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
 
 .reserve-tables-container{
+  padding: 16px;
   width: 100%;
   display: flex;
+}
+
+.mat-icon{
+  color: $colorPrimary;
+  cursor: pointer;
+}
+
+.reserve-list{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  border: 1px solid purple;
 }
